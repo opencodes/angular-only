@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  baseurl : "////"
+  apiUrl : "https://api.prometric.com"
 };
