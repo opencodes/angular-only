@@ -1,0 +1,6 @@
+﻿
+<div class="card" *ngIf="showSelectedDate">
+    <pre class="card-block card-header">Selected date is: <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>
+</div>
+<datepicker [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled" (ngModelChange)="disableAlldates()"></datepicker>
+<hr />

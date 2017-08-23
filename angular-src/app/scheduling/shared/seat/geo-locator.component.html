@@ -1,0 +1,14 @@
+﻿<input #locationInput 
+      [(ngModel)]="selectedLocation"       
+      [typeahead]="dataSource"
+      typeaheadOptionField="formatted_address"
+      (typeaheadOnSelect)="typeaheadOnSelect($event)"
+      (typeaheadLoading)="changeTypeaheadLoading($event)"
+      (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+      (keyup.enter)="searchAndSelect(locationInput.value)"
+      (blur)="searchAndSelect(locationInput.value)"
+      typeaheadMinLength="5"
+      typeaheadWaitMS="400"
+      class="form-control"
+      placeholder="{{placeHolderText}}">
+<p *ngIf="typeaheadNoResults">{{"SHARED.GEOLOCATION.NO_RESULTS" | translate}}</p>

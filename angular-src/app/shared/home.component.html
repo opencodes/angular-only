@@ -1,0 +1,101 @@
+﻿
+<style type="text/css">
+    #rectangle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 30%;
+        background: url('../../../Assets/images/background.jpg') center center no-repeat scroll;
+        background-size: cover;
+        border-top-width: thick;
+        border: solid 2px;
+        border-color: black;
+        margin-top: 80px;
+        min-height: 200px;
+        max-width: 100%;
+        height: 250px;
+        border: solid 3px #424242;
+        border-top: none;
+    }
+
+    .image {
+        display: table;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .borderBlack {
+        border-bottom: solid 7px #424242;
+    }
+</style>
+<div class="header main-header container-full">
+    <div>
+        <div class="container-full">
+            <div class="row">
+                <div class="jumbotron feature" style="background-color:white; width:100%;">
+                    <div  style="text-align: center;width:100%;" id="rectangle">
+                        <div class="col-md-12" style="text-align: center;width:100%;">
+                            <h1 style="margin-top: 34px;color:#333333;">Test Scheduling</h1>
+                            <h1 style="color:#333333;">made simple</h1>
+                            <div class="row" style="margin-top: 62px;">
+                                <div class="col-md-1">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                                <div class="col-md-2">
+                                    <img _ngcontent-c0="" alt="Cinque Terre" class="rounded-circle img-responsive" src="../../../Assets/images/Appointment.png" style="min-height: 70px; margin: 10px;border: solid 3px #424242;">
+                                    <div _ngcontent-c0="" style="margin-top:-10px;">Appointment Search</div>
+                                </div>
+                                <div class="col-md-2">
+                                    <img _ngcontent-c0="" alt="Cinque Terre" class="rounded-circle img-responsive" src="../../../Assets/images/ExamSearch.png" style="min-height: 70px; margin: 10px;border: solid 3px #424242;">
+                                    <div _ngcontent-c0="" style="margin-top:-10px;">Exam Search</div>
+
+                                </div>
+                                <div class="col-md-2">
+                                    <img _ngcontent-c0="" alt="Cinque Terre" class="rounded-circle img-responsive" src="../../../Assets/images/TestCentre.png" style="min-height: 70px; margin: 10px;border: solid 3px #424242;">
+                                    <div _ngcontent-c0="" style="margin-top:-10px;">Locate a Test Center</div>
+                                </div>
+                                <div class="col-md-2">
+                                    &nbsp;
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-md-12 text-center">
+                                    <h2>Choose an option below to get started</h2>
+                                </div>
+
+                            </div>
+
+                            <div class="row" style="margin-top:30px;">
+                                <div class="col-md-12 text-center">
+
+                                   <img class="img-responsive" src="../../../Assets/images/Slide2.png" (click)="navigateToNext()" tooltip="Click here to view search availability." placement="left" style="cursor:pointer;" />
+                                   <img class="img-responsive" src="../../../Assets/images/Slide1.png" />
+                                    
+                                    <!--<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+                                        <slide *ngFor="let slidez of slides; let index=index"
+                                               [active]="slidez.active">
+                                            <img [src]="slidez.image" style="margin:auto;">
+                                            <div class="carousel-caption">
+                                                <h3 style="background-color: transparent;color: white;">Slide {{index + 1}}</h3>
+                                                <p style="background-color: transparent;color: white;">{{slidez.text}}</p>
+                                            </div>
+                                        </slide>
+                                    </carousel>-->
+
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>

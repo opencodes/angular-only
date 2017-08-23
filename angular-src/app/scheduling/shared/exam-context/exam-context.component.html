@@ -1,0 +1,3 @@
+﻿<app-client-selector (enableProgram)="setClient($event)" *ngIf="!enableProgram"></app-client-selector>
+<app-program-selector *ngIf="enableProgram && !isExamSelected" [selectedClient]="selectedClient" (isExamSelected)="setProgram($event)" (isSiteSelected)="setRegion($event)"></app-program-selector>
+<app-exam-selector *ngIf="isExamSelected" [selectedClient]="selectedClient" [selectedProgram]="selectedProgram" [selectedRegion]="selectedRegion" (isSelectedExam)="setExam($event)"></app-exam-selector>

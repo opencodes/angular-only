@@ -1,0 +1,26 @@
+﻿<style type="text/css">
+    .borderBlack {
+        border-bottom: solid 7px #424242;
+    }
+
+    .Tooltip-bottom {
+        background-color: #b0ffb4;
+    }
+</style>
+
+<div class="header main-header container-full">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default borderBlack" role="navigation" style="margin-top:0px;height:80px;">
+        <div class="navbar-header">
+            <div class="pull-left">
+                <a class="navbar-brand" tooltip="Click here to go Home." placement="bottom" style="cursor:pointer;" containerClass="Tooltipcontainer">
+                    <img class="img-fluid" src="../../../Assets/images/pro_scheduler.png" (click)="navigateToHome();" />
+                </a>
+            </div>
+            <div class="pull-right ">
+                <img src="../../../Assets/images/usericon.png" class="img-fluid" style="max-width: 100%;height:30px;" />  <img class="img-fluid" src="../../../Assets/images/prometric_icon.png" style="max-width: 100%;height:60px;" />
+            </div>
+        </div>
+    </nav>
+</div>
+

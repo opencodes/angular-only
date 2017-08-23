@@ -1,0 +1,17 @@
+﻿<div class="alert alert-danger" [hidden]="!errorMessage">{{errorMessage}}</div>
+<form [formGroup]="programFrm" novalidate>
+    <div class="form-group">
+        <div class="form-group">
+            <label for="selectedProgram">Select Program</label>
+            <select class="form-control col-md-6" formControlName="selectProgram" (change)="onSelect(programs[$event.target.selectedIndex-1])" name="selectedProgram">
+                <option value="">Select Program</option>
+                <option *ngFor="let program of programs" [value]="program">{{program.name}}</option>
+            </select>
+            <div [hidden]="programFrm.controls.selectProgram.valid || programFrm.controls.selectProgram.pristine" class="alert alert-danger">
+                Please Select Program!
+            </div>
+        </div>
+        <app-region-selector [selectedClient]="selectedClient" (isSiteSelected)="setRegion($event)"></app-region-selector>
+    </div>
+    <button type="button" class="btn btn-success pull-right" (click)="gotoDetail()" [disabled]="!programFrm.valid">Next</button>
+</form>

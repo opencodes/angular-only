@@ -1,0 +1,49 @@
+﻿<div class="container-fluid">
+    <!--div class="row">
+        <div class="col-xs-12 col-md-5">
+            <input [ngModel]="selectedDate" (ngModelChange)="selectedDate = $event" type="date" name="selectedDate" />
+        </div>
+        <div class="col-xs-12 col-md-5">
+            <app-geo-locator [(geolocation)]="selectedLocation"></app-geo-locator>
+        </div>
+        <div class="col-xs-12 col-md-5">
+            {{selectedDate | date:'shortDate'}}
+        </div>
+        <div class="col-xs-12 col-md-5">
+            {{selectedLocation}}
+        </div>
+        <div class="col-xs-12 col-md-2">
+            <button>Find</button>
+        </div>
+    </div>-->
+    <div class="row" style="margin-bottom:20px;">
+        <div class="col-md-12"><button type="button" class="btn btn-success pull-right" (click)="loadSites($event)">Next</button></div>
+    </div>
+    <div class="row form-horizontal">
+
+        <div class="col-md-5 pull-left">
+            <div class="row">
+                <div class="col-md-12 form-group pull-left">
+                    <label for="searchLocation">Please enter prefered Location</label>
+                    <app-geo-locator [(geolocation)]="selectedLocation" (change)="showTestcenters($event)"></app-geo-locator>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pull-left">
+                    <datepicker-demo [showSelectedDate]="true"></datepicker-demo>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-7 pull-right">
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker *ngFor="let m of Sites; let i = index"
+                            [latitude]="m.location.lat"
+                            [longitude]="m.location.lng">
+                </agm-marker>
+            </agm-map>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,80 @@
+﻿<br />
+<div class="container">
+
+    <div class="row form-horizontal">
+
+        <div class="col-md-5 pull-left">
+            <div class="row">
+                <div class="col-md-12 form-group pull-left">
+                    <label for="searchLocation">Please enter prefered Location</label>
+                    <input [(ngModel)]="geolocation"
+                           [typeahead]="locationDataSource"
+                           typeaheadOptionField="formatted_address"
+                           (typeaheadOnSelect)="locationOnSelect($event)"
+                           typeaheadMinLength="1"
+                           typeaheadWaitMS="200"
+                           class="form-control"
+                           placeholder="Select Location" />
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-7 form-group pull-left">                  
+                    <label for="searchLocation">Find available seats by month</label>
+                    <!--<input placeholder="Choose Month" type="text" class="form-control pull-left" #searchMonth>-->
+                    <input [(ngModel)]="selectMonth"
+                           [typeahead]="monthDataSource"
+                           typeaheadOptionField="Name"
+                           (typeaheadOnSelect)="monthOnSelect($event)"
+                           typeaheadMinLength="1"
+                           typeaheadWaitMS="200"
+                           class="form-control"
+                           placeholder="Select Month" />
+                </div>
+
+                <div class="col-md-5 form-group pull-left">
+                    <label for="yearList">&nbsp;</label>
+                    <select class="form-control" style="min-height:32px;"  name="yearList">
+                        <option *ngFor="let year of yearDataSource" [value]="year.Id">{{year.Name}}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 pull-left">
+                    <p><input type="radio" name="optradio" checked>3 Month Period</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 pull-left">
+                    <datepicker-demo></datepicker-demo>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-md-7 pull-right">
+            <agm-map [latitude]="lat" [longitude]="lng" >
+                <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+            </agm-map>
+        </div>
+
+    </div>
+
+</div>
+<nav>
+  <a routerLink="./agreement" routerLinkActive="active">{{'SCHEDULE_APPOINTMENT.AGREEMENT.TITLE' | translate}}</a>
+  <a routerLink="./client" routerLinkActive="active">{{'SCHEDULE_APPOINTMENT.CLIENT_INFO.TITLE' | translate}}</a>
+  <a routerLink="./seat" routerLinkActive="active">{{'SCHEDULE_APPOINTMENT.FIND_SEAT.TITLE' | translate}}</a>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<hr />
+
+<app-seat></app-seat>

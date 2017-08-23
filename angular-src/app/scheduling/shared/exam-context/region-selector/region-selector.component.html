@@ -1,0 +1,11 @@
+<div class="alert alert-danger" [hidden]="!errorMessage">{{errorMessage}}</div>
+<form [formGroup]="regionFrm" novalidate>
+    <label>Country</label>
+    <select class="form-control col-md-6" formControlName="selectRegion" (change)="onSelect(countries[$event.target.selectedIndex-1])">
+        <option value="">Select Region</option>
+        <option *ngFor="let country of countries">{{country.type}}</option>
+    </select>
+    <div [hidden]="regionFrm.controls.selectRegion.valid || regionFrm.controls.selectRegion.pristine" class="alert alert-danger">
+        Please Select Region!
+    </div>
+</form>

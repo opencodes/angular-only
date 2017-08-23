@@ -1,0 +1,29 @@
+﻿{
+  "MAIN": {
+    "TITLE": "ProScheduler"
+  },
+  "SCHEDULE_APPOINTMENT": {
+    "TITLE": "Schedule Appointment",
+    "AGREEMENT": {
+      "TITLE": "Scheduling Agreement"
+    },
+    "CLIENT_INFO": {
+      "TITLE": "Client Info"
+    },
+    "FIND_SEAT": {
+      "TITLE": "Find Seat"
+    }
+  },
+  "FIND_AVAILABILITY": {
+    "TITLE": "Find Availability"
+  },
+  "SELECT_TEST CENTRE": {
+    "TITLE": "Select Test Centre"
+  },
+  "SHARED": {
+    "GEOLOCATION": {
+      "NO_RESULTS": "No Results",
+      "SEARCH_PLACEHOLDER":  "Location, Zip, City"
+    }
+  }
+}

@@ -1,0 +1,121 @@
+﻿<!-- Latest compiled and minified CSS -->
+
+<link href="../../../../../Assets/css/SlotStyle.css" rel="stylesheet" />
+
+<div id="content-wrapper" class="container-full">
+    <div class="row ">
+        <div class="col-md-12 card card-default header">
+            <p class="headerText"><span style="color:black;"><b> National Association of Securities </b></span><span class="glyphicon glyphicon-info-sign"></span> <span class="glyphicon glyphicon-pencil"></span> <u>Cromtom,MD</u> <span class="glyphicon glyphicon-map-marker"></span> <u>Soonest Available</u> <span class="glyphicon glyphicon-calendar"></span>  </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 form-inline marginBottom">
+            <span class="glyphicon glyphicon-map-marker"></span>
+            <label class="control-label">Sort By :  </label>
+
+            <div class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Closest Test Centre
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="" (click)="sort($event,'location.distance')">Closest Test centre</a>
+                    <a class="dropdown-item" href="" (click)="sort($event,'slots[0].startDateTime')">First appointment available</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row ">
+
+        <div class="col-md-7 pull-left mainContainer">
+
+            <div class="row" *ngFor='let siteSlot of siteSlots | orderBy: category'>
+                <div class="col-md-12 pull-left">
+                    <div class="card card-default marginBottom">
+                        <div class="card-heading-2 card-heading-sm mainContainerText">
+                            <span class="glyphicon glyphicon-object-align-bottom"></span> <span class="small"><b>{{ siteSlot.location.address.adminDistrict }}, {{ siteSlot.location.address.locality }}</b> - {{ siteSlot.location.address.addressLine[1] }},{{ siteSlot.location.address.addressLine[2] }} <span class="text-muted">{{ siteSlot.location.address.country }}  </span></span>
+                        </div>
+                        <div class="card-body card-body-sm form-inline">
+
+                            <div class="row">
+
+                                <div class="col-md-1" style="text-align:center;">
+                                    <div class="row">
+                                        <img src="../../../../../Assets/images/country-marker.png"
+                                             style="max-height:30px;padding-left:20px;margin-top: 20px;" />
+                                    </div>
+                                    <div style="padding-left:10px;margin-top:5px;"> {{ siteSlot.location.distance  }} Km </div>
+
+                                </div>
+
+                                <div class="col-md-2" style="text-align:center;margin-top:5px;">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="card card-default" style="margin-bottom:0px;">
+                                                <div class="card card-heading card-heading-sm testCentreMonth">
+                                                    <p> <b>{{ siteSlot.slots[0].startDateTime | date :'MMM' | uppercase}} </b> </p>
+                                                </div>
+                                                <div class="testCentreDay" (click)='selectTestCenter(siteSlot)' style="cursor: pointer;">
+                                                    <p> <b> {{ siteSlot.slots[0].startDateTime | date :'dd'}}</b> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            {{ siteSlot.slots[0].startDateTime | date :'EEEE'}}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-9 form-inline" style="text-align:center;">
+
+                                    <div class="row">
+                                        <div class="col-md-5 pull-left">
+                                            <div style="font-size:small;padding-top: 5px;">Time/Seat Available</div>
+                                        </div>
+                                        <div class="col-md-7 pull-right" style="margin-top:2px;">
+                                            <popover [title]="popup.title" [actionTxt]="popup.actionTxt" [placement]="popup.placement"></popover>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="width:100%;">
+
+                                        <div class="col-md-3 testSentreTimeSlot" *ngFor="let slot of siteSlot.slots">
+                                            <div class="card card-default form-inline card-success">
+                                                <div class="card-heading card-heading-sm testcenterTime">
+                                                    {{ slot.startDateTime | date:'shortTime'}}
+                                                </div>
+                                                <div class="testCenterSeat">
+                                                    <div>Seats 21</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="col-md-5 pull-right">
+
+            <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker *ngFor="let mapSlot of siteSlots"
+                            [latitude]="mapSlot.location.coordinates[0]"
+                            [longitude]="mapSlot.location.coordinates[1]">
+                </agm-marker>
+            </agm-map>
+        </div>
+    </div>
+</div>

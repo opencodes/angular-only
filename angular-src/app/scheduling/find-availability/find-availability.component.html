@@ -1,0 +1,12 @@
+﻿
+<h3>{{'FIND_AVAILABILITY.TITLE' | translate}}</h3>
+<div class="container">
+    <div class="starter-template">
+        <div class="row">
+            <div class="col-md-12">
+                <app-exam-context *ngIf="!selectLocation" (selectLocation)="setLocation($event)"></app-exam-context>
+                <app-seat *ngIf="selectLocation"></app-seat>
+            </div>
+        </div>
+    </div>
+</div>

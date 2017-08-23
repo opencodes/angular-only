@@ -1,0 +1,16 @@
+﻿<div class="alert alert-danger" [hidden]="!errorMessage">{{errorMessage}}</div>
+<form [formGroup]="clientFrm" novalidate>
+    <div class="form-group">
+        <label for="selectedClient">Select Client</label>
+        <select class="form-control col-md-6" formControlName="selectClient" (change)="onSelect(clients[$event.target.selectedIndex-1])">
+            <option value="">Select Client</option>
+            <option *ngFor="let client of clients" [value]="client">{{client.name}}</option>
+        </select>
+        <div [hidden]="clientFrm.controls.selectClient.valid || clientFrm.controls.selectClient.pristine" class="alert alert-danger">
+            Please Select Client!
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-success  pull-right" (click)="gotoProgram()" [disabled]="!clientFrm.valid">Next</button>
+    </div>
+</form>

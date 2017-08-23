@@ -1,0 +1,15 @@
+﻿
+<aside>
+<div class="clearfix" style="border-bottom:1px solid #ccc;" *ngIf="selectedClient"><h3>{{selectedClient.name}}</h3></div>
+<article>
+    <ul class="list-unstyled">
+        <li class="list-group-item-heading" *ngIf="selectedProgram">Exam program: {{selectedProgram.name}}</li>
+        <li class="list-group-item-heading" *ngIf="selectedRegion">Eligibility Information: {{selectedRegion.type}}</li>
+        <li class="list-group-item-heading" *ngIf="selectedExam">Exam Name: {{selectedExam.name}}</li>
+		<li class="list-group-item-heading">Test Center Location: .............</li>
+		<li class="list-group-item-heading">Test Date: .............</li>
+		<li class="list-group-item-heading">Test Time: .............</li>
+		<li class="list-group-item-heading"><span class="glyphicon glyphicon-map-marker text-success" aria-hidden="true"></span> Locate a Test Center</li>
+    </ul>
+</article>
+</aside>

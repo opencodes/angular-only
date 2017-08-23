@@ -1,0 +1,140 @@
+﻿/* You can add global styles to this file, and also import other style files */
+.testWebpackStyle {
+    background-color: lime;
+}
+
+/*Popover - Calender Theme*/
+.moreAction {
+    background: #fff;
+    color: #00f;
+    font-size: .85em;
+    border: 1px solid #ddd;
+    line-height: initial;
+    padding: 0.2em;
+}
+
+.popover {
+    max-width: inherit;
+    padding: 0.75rem;
+    background-color: #EFF2F4;
+    border: 0 none;
+}
+
+.popover-content {
+}
+
+.slotsWrpr {
+    display: inline-block;
+    border: 0.25rem solid #8cc63f;
+    border-radius: 5px;
+    width: 80%;
+    background-color: #EFF2F4;
+    text-align: center;
+}
+
+    .slotsWrpr .select {
+        padding: 0.25rem;
+        width: 100%;
+        margin-bottom: 0.7rem;
+        background-color: #8cc63f;
+        border: 0 none;
+        font-size: 1em;
+    }
+
+.calPopTheme .bg-faded {
+    background-color: #EFF2F4;
+    border: 0 none;
+}
+
+.calPopTheme button.btn, .calPopTheme [type="button"] {
+    border: 0 none;
+    border-radius: 0;
+}
+
+.calPopTheme tbody {
+    border: 2px solid #C3C8CC;
+    border-top: 0 none;
+}
+
+    .calPopTheme tbody button.btn:not([disabled]) {
+        background: #fff;
+    }
+
+    .calPopTheme tbody button.btn {
+        background: #E5E5E5;
+    }
+
+.text-center {
+    margin: 0;
+    padding: 0;
+}
+
+.calPopTheme .btn-secondary {
+    background-color: transparent;
+    border-color: transparent;
+    border: 0 none;
+}
+
+daypicker table thead tr:nth-child(2) {
+    background-color: #fff;
+    border: 2px solid #C3C8CC;
+    border-bottom: 0 none;
+}
+
+daypicker table thead tr:nth-child(1) th {
+    padding-bottom: 1em;
+}
+
+    daypicker table thead tr:nth-child(1) th:first-child .btn, daypicker table thead tr:nth-child(1) th:last-child .btn {
+        width: 0;
+        height: 0;
+        border-top: 0.75rem solid transparent;
+        border-bottom: 0.75rem solid transparent;
+        border-right: 0.75rem solid #8cc63f;
+        color: transparent;
+        padding: 0;
+    }
+
+    daypicker table thead tr:nth-child(1) th:last-child .btn {
+        border-left: 0.75rem solid #8cc63f;
+        border-right: none;
+    }
+
+.calPopTheme .btn-info {
+    color: #292b2c;
+    min-width: 100%;
+    background-color: transparent;
+    border-radius: 5px !important;
+    border: 3px solid #8cc63f !important;
+    padding: 0.025rem;
+}
+
+.popover.popover-bottom::before, .popover.popover-bottom::after {
+    display: none;
+}
+
+
+@media (min-width: 576px) {
+    .popover-content {
+        display: inline-flex;
+    }
+
+    .slotsWrpr {
+        margin-left: 2.02em;
+        width: 10em;
+        position: absolute;
+        top: -1px;
+    }
+
+        .slotsWrpr .heading {
+            height: 3em;
+        }
+
+        .slotsWrpr ul {
+            height: 10em;
+        }
+
+        .slotsWrpr .select {
+            width: 5em;
+        }
+}

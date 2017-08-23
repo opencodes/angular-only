@@ -1,0 +1,25 @@
+﻿<article class="" *ngIf="!submitted">
+    <div class="alert alert-danger" [hidden]="!errorMessage">{{errorMessage}}</div>
+    <form [formGroup]="examFrm" novalidate>
+        <div class="form-group">
+            <select class="form-control col-md-6" formControlName="selectExam" (change)="onSelect(exams[$event.target.selectedIndex-1])" name="">
+                <option value="">Select Exam</option>
+                <option *ngFor="let exam of exams" [value]="exam">{{exam.name}}</option>
+            </select>
+            <div [hidden]="examFrm.controls.selectExam.valid || examFrm.controls.selectExam.pristine" class="alert alert-danger">
+                Please Select Exam!
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-success pull-right" (click)="checkout()" [disabled]="!examFrm.valid">Find a Test Center/Seat</button>
+        </div>
+    </form>
+</article>
+<article class="jumbotron" *ngIf="submitted">
+    <ul>
+        <li class="list-group-item-heading">Selected Program - {{selectedProgram.name}}</li>
+        <li class="list-group-item-heading">Selected Region - {{selectedRegion.type}}</li>
+        <li class="list-group-item-heading">Selected Exam - {{selectedExam.name}}</li>
+    </ul>
+
+</article>

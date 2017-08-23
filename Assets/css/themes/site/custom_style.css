@@ -1,0 +1,16 @@
+﻿
+.ProLogo {
+    display:block;
+    background-image: url('../../../../angular-src/assets/images/prometric_logo.png');
+}
+
+.main-header {
+    background-color: black;
+    color: white;
+}
+
+.secondary-content {
+    background-color: black;
+    color: white;
+}
+

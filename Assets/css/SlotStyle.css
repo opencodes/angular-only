@@ -1,0 +1,98 @@
+﻿.header {
+    margin-bottom: 5px !important;
+    background: #D3D3D3;
+    vertical-align: middle;
+}
+
+.headerText {
+    color: green;
+    font-size: small;
+}
+
+
+.dropdownSize {
+    min-height: 20px;
+    font-size: x-small;
+}
+
+.mainContainer {
+    padding-right: 5px;
+    padding-left: 2px;
+}
+
+.mainContainerText {
+    background: #D3D3D3;
+    color: black;
+    Font-size: medium;
+}
+
+.testCentreMonth {
+    color: black;
+    Font-size: medium;
+    background-color: #db973f;
+}
+
+.testCentreDay {
+    padding: 3px !important;
+    background-color: #cecdcc !important;
+    padding-right: 12px !important;
+    text-align: center;
+}
+
+.testCentreMoreDates {
+    height: 22px !important;
+    font-size: small;
+    padding: 0;
+    color: blue;
+}
+
+.testcenterTime {
+    color: black;
+    Font-size: small;
+    vertical-align: text-top;
+    padding: 3px !important;
+    background-color: #35b23f;
+    width: 100%;
+}
+
+    .testcenterTime:hover, .testcenterTime.active {
+        background-color: #db973f;
+    }
+
+.testCenterSeat {
+    color: black;
+    Font-size: small;
+    padding: 5px;
+    background-color: #E3E3E3 !important;
+    font-size: x-small;
+    width: 100%;
+}
+
+.marginBottom {
+    margin-bottom: 5px !important;
+}
+
+
+.testSentreTimeSlot {
+    padding-right: 5px;
+    padding-left: 0;
+}
+
+.testSentreTimeSlot :hover {
+
+}
+
+.agm-map {
+    height: 400px;
+}
+
+.card {
+    margin-bottom: 0px;
+}
+
+.card-heading-2 {
+    padding: 4px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
