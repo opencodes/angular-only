@@ -7,6 +7,7 @@ import { Client } from './client.model';
 import { Program } from './program.model';
 import { Exam } from './exam.model';
 import { Site } from './site.model';
+import { environment } from '../../environments/environment';
 
 import { Direction, Contact, Address, Slot, SiteLocation, SiteSlot } from './siteSlot.model';
 
@@ -289,7 +290,7 @@ export class SchedulingApiService {
 
      getPrograms(clientId: string): Observable<Program[]> {
         return Observable.create((observer: Observer<Program[]>) => {
-            this.httpService.get('Clients/')
+            this.httpService.get(environment.apiUrl + 'Clients/')
                 .map(this.getResultArray)
                 .subscribe((rArray) => {
                     let programs: Program[] = rArray.map(rItem => {
